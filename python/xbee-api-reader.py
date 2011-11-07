@@ -6,8 +6,9 @@ from xbee import XBee
 import serial
 
 
-ser = serial.Serial('/dev/tty.usbserial-FTT3JNCK', 9600)
 #ser = serial.Serial('/dev/ttyUSB0', 9600)
+#ser = serial.Serial('/dev/tty.usbserial-FTT3JNCK', 9600)
+ser = serial.Serial('/dev/tty.SLAB_USBtoUART', 9600)
 
 xbee = XBee(ser)
 
