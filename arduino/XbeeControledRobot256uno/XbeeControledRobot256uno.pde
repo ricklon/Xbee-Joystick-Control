@@ -73,46 +73,6 @@ void setRightMotorSpeed(int velocity)
   setMotorVel(motor2Dir, motor2PWM, -velocity);
 }
 
-
-
-
-void goBack()
-{
-  //Serial.println("Go Forward!");
-  setLeftMotorSpeed(-255);
-  setRightMotorSpeed(-255);
-}
-
-void goForward()
-{
-  //Serial.println("Go Forward!");
-  setLeftMotorSpeed(255);
-  setRightMotorSpeed(255);
-}
-
-void goRight()
-{
-  Serial.println("Go Right!");
-  setLeftMotorSpeed(255);
-  setRightMotorSpeed(-255);
-}
-
-void goLeft()
-{
-  //Serial.println("Go Left!");
-  setLeftMotorSpeed(-255);
-  setRightMotorSpeed(255);
-}
-
-void stop()
-{
-  //Serial.println("Stop.");
-  setLeftMotorSpeed(0);
-  setRightMotorSpeed(0);
-}
-
-
-
 void getJoystickData( struct Position& xxyy) 
 { 
   int inByte;
@@ -212,21 +172,39 @@ void loop()
     else
     {
       Serial.println("Else condition"); 
-      if (fb > DEADZONE)
+      if(rl>DEADZONE)
       {
-        setRightMotorSpeed(fb); 
-        setLeftMotorSpeed(0); 
+        if (fb > DEADZONE)
+        {
+          setRightMotorSpeed(fb); 
+          setLeftMotorSpeed(0); 
+        }
+        if  (fb < -DEADZONE)
+        {
+          setRightMotorSpeed(0); 
+          setLeftMotorSpeed(fb); 
+        }
       }
-      if  (fb < -DEADZONE)
+      else
       {
-        setRightMotorSpeed(0); 
-        setLeftMotorSpeed(fb); 
-      }
-      
-      setRightMotorSpeed(rl); 
-      setLeftMotorSpeed(-rl); 
-    }
+        if (fb > DEADZONE)
+        {
+          setRightMotorSpeed(fb); 
+          setLeftMotorSpeed(0); 
+        }
+        if  (fb < -DEADZONE)
+        {
+          setRightMotorSpeed(0); 
+          setLeftMotorSpeed(fb); 
+        }
+      }        
+      if (fb < DEADZONE && fb > -DEADZONE)
+      {
+        setRightMotorSpeed(rl); 
+        setLeftMotorSpeed(-rl); 
+       }
     
+    }
    
  
 
