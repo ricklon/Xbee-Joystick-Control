@@ -17,17 +17,25 @@ I recommend using the Xbee Explorer (USB) or the Adafruit Xbee Adapter Kit (FTDI
 
 
 The configuration for the reciever Xbee should be:
-+++
+//Wait for the OK, do not hit enter
+```
++++ 
 ATDL407B2C9A,DH0013A200,ID 2001,MY20, WR, CN
+```
 
 The configuraiton for the Joystick sender Xbee should be:
+//Wait for the OK, do not hit enter
+```
 +++
 ATDL407E10E6, DH0013A200, ID2001, MY10, D02, D12, D22, IR64, WR, CN
+```
 
 You can check the Xbee configuration with the following:
+//Wait for the OK, do not hit enter
+```
 +++
 ATDL, DH, ID, MY, D0, D1, D2, IR, CN
-
+```
 
 ##Xbee robot receiver configuration
 The bread boarding step requires the following parts:
