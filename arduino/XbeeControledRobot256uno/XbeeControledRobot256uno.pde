@@ -171,31 +171,36 @@ void loop()
     }
     else
     {
-      Serial.println("Else condition"); 
+      Serial.println("Right RL zone"); 
       if(rl>DEADZONE)
       {
         if (fb > DEADZONE)
         {
-          setRightMotorSpeed(fb); 
-          setLeftMotorSpeed(0); 
+          Serial.println("Upper Right RL zone"); 
+          setRightMotorSpeed(0); 
+          setLeftMotorSpeed(fb); 
         }
         if  (fb < -DEADZONE)
         {
+          Serial.println("Lower Right RL zone"); 
           setRightMotorSpeed(0); 
           setLeftMotorSpeed(fb); 
         }
       }
       else
       {
+        Serial.println("Left RL Zone"); 
         if (fb > DEADZONE)
         {
+          Serial.println("Upper Left RL zone"); 
           setRightMotorSpeed(fb); 
           setLeftMotorSpeed(0); 
         }
         if  (fb < -DEADZONE)
         {
-          setRightMotorSpeed(0); 
-          setLeftMotorSpeed(fb); 
+          Serial.println("Lower Left RL zone"); 
+          setRightMotorSpeed(fb); 
+          setLeftMotorSpeed(0); 
         }
       }        
       if (fb < DEADZONE && fb > -DEADZONE)
