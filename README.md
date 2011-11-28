@@ -1,4 +1,4 @@
-#Xbee Joystick Controled Robot
+#Xbee Joystick Controlled Robot
 
 This project configures a set of Xbees that are plugged into a custom Joystick PCB, and wired on top of a line following Arduino based robot.
 The robot project is here: http://ieee.rutgers.edu/content/line-following-kit
@@ -60,7 +60,7 @@ It's easiest to do the wiring first. Then place the Xbee adapter on the tiny bre
 Make sure the Xbee Rx,Tx pins are disconneted from the Arduino. The Arduino Uno use the default serial port for Xbee and programming Arduino.
 
 The upload the following sketch for the Joystick controls:
-https://github.com/ricklon/Xbee-Joystick-Control/blob/master/arduino/XbeeControledRobot256uno/XbeeControledRobot256uno.pde
+https://github.com/ricklon/Xbee-Joystick-Control/blob/master/arduino/XbeeControlledRobot256uno/XbeeControlledRobot256uno.pde
 
 ##Python code
 This is only needed to diagnose communication issues. Not needed, but interesting.
