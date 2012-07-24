@@ -1,10 +1,13 @@
 
-#define motor1Dir 7
+#define motor1Dir 2
+#define motor1Enable 3
+#define motor1PWM 4
+
+
 #define motor2Dir 8
-#define motor1PWM 9
-#define motor2PWM 10
-#define motor1Enable 11
-#define motor2Enable 12
+#define motor2Enable 5
+#define motor2PWM 7
+
 
 #define DEADZONE 25
 
